@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>Search Results</h1>
+  {% if results %}
+    <ul>
+      {% for user in results %}
+        <li><a class="mr-2" href="{{ url_for('profile', username=user) }}">{{ user }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No results found.</p>
+  {% endif %}
+{% endblock %}

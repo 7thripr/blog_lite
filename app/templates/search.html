@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <h1>Search...</h1>
+  <form method="post">
+    {{ form.csrf_token }}
+    {{ form.search(class="form-control form-control-lg") }}
+    {{ form.submit(class="btn btn-outline-info") }}
+  </form>
+{% endblock %}

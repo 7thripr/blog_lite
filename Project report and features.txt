@@ -1,0 +1,31 @@
+Video Presentation Link
+
+
+
+Features implemented
+[x] = Implemented
+
+[x] User signup and login
+[x] User profile view with basic stats
+[x] Blog Post Management
+[x] Search
+[x] User’s Feed
+[x] Form for username and password (both login and signup)
+[x] Use Flask Security and Token Based Authentication (Used flask_login)
+[x] Suitable model for user
+[x] Form for username and password (both login and signup)
+[x] Use Flask Security and Token Based Authentication
+[x] Create a new blog
+[x] Edit a blog
+[x] Remove a blog
+[x] Export option is required
+[x] Ability to search other users
+[x] Ability to follow others
+[x] Ability to unfollow others
+[x] Show the blogs/posts created by other users
+[x] Navigate to the user’s profile on clicking the username on the blog or post
+[x] Scheduled Job - Daily reminders on Google Chat using webhook or SMS or Email
+[x] export CSV format for blogs
+[x] Add caching where required to increase the performance
+[x] Add cache expiry 
+[x] API Performance

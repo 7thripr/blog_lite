@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="content-section">
+    <div class="media">
+      <img class="rounded-circle account-img" src="{{ profile_photo }}">
+      <div class="media-body">
+        <h2 class="account-heading">{{ user.username }}</h2>
+        <p class="text-secondary">{{ user.email }}</p>
+        <p class="text-secondary align=right">Followers: {{ follower_count }} <br></br>Blogs: {{ blog_count }}</p>
+        <script>
+          let followUrl = "{{ url_for('follow', username=user.username) }}" ;
+          let unfollowUrl = "{{ url_for('unfollow', username=user.username) }}";
+          let followersUrl = "{{ url_for('followers', username=user.username) }}";
+          let followingUrl = "{{ url_for('following', username=user.username) }}";
+        </script>
+        <form>
+          <button type="button" onclick="location.href=followUrl;" class="btn btn-success">Follow</button>
+          <button type="button" onclick="location.href=unfollowUrl;" class="btn btn-danger">Unfollow</button>
+          <button type="button" onclick="location.href=followersUrl;" class="btn btn-info me-auto">Follower</button>
+          <button type="button" onclick="location.href=followingUrl;" class="btn btn-info me-auto">Following</button>
+        </form>
+      </div>
+    </div>
+
+</div>
+<h3>Blogs Posted</h3>
+{% for post in posts %}
+<article class="media content-section">
+    <img class="rounded-circle article-img" src="{{ url_for('static', filename='pp/' + post.author.profile_photo) }}"> <a class="mr-2" href="#">{{ post.author.username }}</a>
+    <div class="media-body content-section">
+      <h2><a class="article-title" href="{{ url_for('post', post_id=post.id) }}"">{{ post.title }}</a></h2>
+      <p class="article-content">{{ post.content }}</p>
+    </div>
+    <div class="article-metadata ">
+      <small class="text-muted ms-auto">{{ post.date_posted.strftime('%d-%m-%Y') }}</small>
+    </div>
+  </article>
+{% endfor %}
+{% endblock %}

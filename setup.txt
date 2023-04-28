@@ -1,0 +1,27 @@
+create a virtual environment
+
+		python3 -m venv env
+		
+active env
+		source ./env/bin/activate
+
+install requirements
+		
+		pip install -r requirements.txt
+
+create flask app
+
+		export FLASK_APP=run.py
+
+create db
+
+		python
+			(then in python prompt)
+				from app import app, db
+				app.app_context().push()
+				db.create_all()
+		press Ctrl+D / exit() to exit the prompt
+
+run the app
+
+flask run

@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block content %}
+<h1>Follower List</h1>
+{% for follower in followers %}
+<ul>
+ <a class="mr-2" href="{{ url_for('profile', username=follower) }}"><h4>{{ follower }}</h4></a>
+</ul>
+ {% endfor %}
+{% endblock content %}
